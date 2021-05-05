@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Réalisateurs - Cinematheque</title>
+<title>Films - Cinematheque</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="Place your description here" />
 <meta name="keywords" content="put, your, keyword, here" />
@@ -22,7 +22,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
 </head>
-<body onload="realisateurs();" id="page3">
+<body onload="films()" id="page3">
 <div class="tail-top">
 	<div class="tail-bottom">
 		<div id="main">
@@ -40,8 +40,8 @@
 					<ul>
 						<li><a href="index.html">Accueil</a></li>
 						<li><a href="about-us.html">À propos</a></li>
-						<li><a href="articles.html" class="active">Réalisateurs</a></li>
-						<li><a href="films.html">Films</a></li>
+						<li><a href="articles.html">Réalisateurs</a></li>
+						<li><a href="films.html" class="active">Films</a></li>
 						<li><a href="contact-us.html">Nous contacter</a></li>
 						<li class="last"><a href="sitemap.html">Plan du site</a></li>
 					</ul>
@@ -54,8 +54,8 @@
 					<div class="border-right">
 						<div class="border-left">
 							<div class="inner">
-								<h3>Nos <span>réalisateurs</span></h3>
-								<p>Retrouvez ici la liste de nos réalisateurs, comprenant des informations telles que leur nationalité, leur biographie ainsi que les films qu'ils ont réalisés.</p>
+								<h3>Nos <span>films</span></h3>
+								<p>Retrouvez ici la liste de nos films, comprenant des informations telles que la date de sortie, le genre, la durée, la note, la description ainsi que le réalisateur.</p>
 							</div>
 						</div>
 					</div>
@@ -63,7 +63,7 @@
 				<div class="content">
 					<!--<h3>Artciles <span>récents</span></h3>-->
           <!-- TODO -->
-					<ul id="realisateurs" class="list">
+					<ul id="films" class="list">
 					</ul>
 				</div>
 			</div>

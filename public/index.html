@@ -19,8 +19,10 @@
 	</script>
 	<link href="ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
 </head>
-<body id="page1">
+<body  onload="festivals();sorties();" id="page1">
 <div class="tail-top">
 	<div class="tail-bottom">
 		<div id="main">
@@ -38,7 +40,8 @@
 					<ul>
 						<li><a href="index.html" class="active">Accueil</a></li>
 						<li><a href="about-us.html">À propos</a></li>
-						<li><a href="articles.html">Articles</a></li>
+						<li><a href="articles.html">Réalisateurs</a></li>
+						<li><a href="films.html">Films</a></li>
 						<li><a href="contact-us.html">Nous contacter</a></li>
 						<li class="last"><a href="sitemap.html">Plan du site</a></li>
 					</ul>
@@ -49,40 +52,51 @@
 				<div id="slogan">
 					<div class="image png"></div>
 					<div class="inside">
-						<h2>We are breaking<span>All Limitations</span></h2>
-						<p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod tempor incididunt labore etolore magna aliqua enim minim veniam quis nostrud exercitation ullamco laboris.</p>
-						<div class="wrapper"><a href="#" class="link1"><span><span>Learn More</span></span></a></div>
+						<h2>Nous brisons<span>les limites</span></h2>
+						<p>Vous êtes passionné(e) par le 7ème art ?
+              Rejoignez-nous ! Venez vivre de grandes émotions collectives, et contribuez, vous aussi, à écrire les prochaines pages du Cinéma !</p>
+						<div class="wrapper"><a href="about-us.html" class="link1"><span><span>Nous découvrir</span></span></a></div>
 					</div>
 				</div>
 				<div class="box">
 					<div class="border-right">
 						<div class="border-left">
 							<div class="inner">
-								<h3>Welcome to <b>Cinema</b> <span>World</span></h3>
-								<p>Cinema World Site is a free web template created by TemplateMonster.com team. This website template is optimized for 1024X768 screen resolution. It is also XHTML &amp; CSS valid.</p>
-								<div class="img-box1"><img src="images/1page-img1.jpg" alt="" />This website template can be delivered in two packages - with PSD source files included and without them. If you need PSD source files, please go to the template download page at TemplateMonster to leave the e-mail address that you want the template ZIP package to be delivered to.</div>
-								<p>This website template has several pages: <a href="index.html">Home</a>, <a href="about-us.html">About us</a>, <a href="articles.html">Articles</a> (with Article page), <a href="contact-us.html">Contact us</a> (note that contact us form – doesn’t work), <a href="sitemap.html">Site Map</a>.</p>
+								<h3>Bienvenue chez <b>Cinema</b><span>theque</span></h3>
+								<p><b>Cinematheqe</b> est un acteur majeur de l’industrie cinématographique, principalement en Europe, tant au niveau de la production et de la distribution de films que de l’exploitation des salles de cinéma.</p>
+								<div class="img-box1"><img src="images/1page-img1.jpg" alt="" /><b>Cinematheque</b> est une entreprise dotée d’un ADN riche de sens, et qui bénéficie d’un patrimoine exceptionnel. Les équipes qui l’animent se veulent agiles et innovantes : elles bâtissent ensemble une organisation moderne et durable où la compétence, la créativité et l’initiative sont reconnues.</div>
+								<p>Notre objectif est d'offrir des expériences uniques dans nos salles et des moments de vrais spectacles pour partager ensemble des émotions et garantir une satisfaction toujours plus grande de nos spectateurs.</p>
 							</div>
 						</div>
 					</div>
 				</div>
+        <div class="content">
+					<h3>Prochains <span>festivals</span></h3>
+					<ul id="festivals" class="list">
+					</ul>
+				</div>
+        <div class="content">
+					<h3>Prochaines <span>sorties</span></h3>
+					<ul id="sorties" class="list">
+					</ul>
+				</div>
 				<div class="content">
-					<h3>Fresh <span>Movies</span></h3>
+					<h3>Redécouvrez <span>les classiques</span></h3>
 					<ul class="movies">
 						<li>
 							<h4>Toy Story 3</h4><img src="images/1page-img2.jpg" alt="" />
-							<p>Check out Disney-Pixar's official Toy Story site, watch the <span>Toy Story 3</span> trailer, and meet new characters. Remember, no toy gets left behind!</p>
-							<div class="wrapper"><a href="#" class="link2"><span><span>Read More</span></span></a></div>
+							<p>Les créateurs des très populaires films Toy Story ouvrent à nouveau le coffre à jouets et invitent les spectateurs à retrouver le monde délicieusement magique de Woody et Buzz au moment où Andy s'apprête à partir pour l'université.<br>Délaissée, la plus célèbre bande de jouets se retrouve à la crèche !</p>
+							<div class="wrapper"><a href="#" class="link2"><span><span>Voir plus</span></span></a></div>
 						</li>
 						<li>
-							<h4>Prince of Percia: Sands of Time</h4><img src="images/1page-img3.jpg" alt="" />
-							<p>A young fugitive prince and princess must stop a villain who unknowingly threatens to destroy the world with a special dagger.</p>
-							<div class="wrapper"><a href="#" class="link2"><span><span>Read More</span></span></a></div>
+							<h4>Prince of Persia</h4><img src="images/1page-img3.jpg" alt="" />
+							<p>Un prince rebelle est contraint d'unir ses forces avec une mystérieuse princesse pour affronter ensemble les forces du mal et protéger une dague antique capable de libérer les Sables du temps, un don de dieu qui peut inverser le cours du temps et permettre à son possesseur de régner en maître absolu sur le monde.</p>
+							<div class="wrapper"><a href="#" class="link2"><span><span>Voir plus</span></span></a></div>
 						</li>
 						<li class="last">
-							<h4>The Twilight Saga: Eclipse</h4><img src="images/1page-img4.jpg" alt="" />
-							<p>As a string of mysterious killings grips Bella is forced to choose between her love for vampire Edward and her friendship with werewolf Jacob.</p>
-							<div class="wrapper"><a href="#" class="link2"><span><span>Read More</span></span></a></div>
+							<h4>Twilight</h4><img src="images/1page-img4.jpg" alt="" />
+							<p>Isabella Swan, 17 ans, déménage à Forks, petite ville pluvieuse dans l'Etat de Washington, pour vivre avec son père. Au lycée, elle est terriblement intriguée par le comportement d'une étrange fratrie, deux filles et trois garçons. Bella tombe follement amoureuse de l'un d'eux, Edward Cullen.</p>
+							<div class="wrapper"><a href="#" class="link2"><span><span>Voir plus</span></span></a></div>
 						</li>
 						<li class="clear">&nbsp;</li>
 					</ul>
@@ -105,5 +119,6 @@
 	</div>
 </div>
 <script type="text/javascript"> Cufon.now(); </script>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
